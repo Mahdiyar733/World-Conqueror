@@ -1,0 +1,46 @@
+.homepage {
+	height: 100dvh;
+	background-image: linear-gradient(
+			rgba(56, 63, 68, 0.8),
+			rgba(36, 42, 46, 0.8)
+		),
+		url("../bg.jpg");
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	padding: 2.5rem 5rem;
+	min-height: 700px;
+}
+
+@media (max-width: 500px) {
+	.homepage {
+		padding: 2rem 1.7rem;
+	}
+}
+@media (max-width: 385px) {
+	.homepage {
+		min-height: 900px;
+	}
+}
+
+.homepage section {
+	display: flex;
+	flex-direction: column;
+	height: 85%;
+	align-items: center;
+	justify-content: center;
+	gap: 2.5rem;
+	text-align: center;
+}
+
+.homepage h1 {
+	font-size: 4.5rem;
+	line-height: 1.3;
+}
+
+.homepage h2 {
+	width: 90%;
+	font-size: 1.9rem;
+	color: var(--color-light--1);
+	margin-bottom: 2.5rem;
+}
