@@ -224,7 +224,7 @@ export default function Homepage() {
 					</div>
 				)}
 			</main>
-			<div className="bg-[url('./src/pages/Homepage/footerPic.jpg')] h-auto bg-cover bg-top">
+			<div className="bg-[url('./footerPic.jpg')] h-auto bg-cover bg-top">
 				<Footer />
 			</div>
 		</>
