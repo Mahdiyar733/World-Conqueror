@@ -17,7 +17,7 @@ function DropdownBtn() {
 				{isOpen ? <CloseSvg /> : <MenuSvg />}
 			</button>
 			{isOpen ? (
-				<div className="flex flex-col p-6 gap-6 items-center absolute top-full mt-2 rounded-lg right-0 left-0 mb-8 bg-[#72787E] h-auto animate-fade-left animate-duration-500 animate-ease-in-out">
+				<div className="flex flex-col p-6 gap-6 items-center absolute top-full mt-2 rounded-lg right-0 left-0 mb-8 bg-[#72787E] ">
 					<NavLink
 						to="/"
 						className={({ isActive }) =>
