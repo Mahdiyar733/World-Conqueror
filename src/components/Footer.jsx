@@ -6,9 +6,9 @@ import TelegramSvg from "../svg/TelegramSvg";
 function Footer() {
 	return (
 		<>
-			<footer className="backdrop-blur-sm backdrop-brightness-50  w-full flex flex-col-reverse px-16 py-12 lg:flex-row items-center justify-evenly">
-				<div className="w-full flex flex-row items-center gap-4 h-full justify-center">
-					<div className="grid grid-cols-1 grid-rows-5 items-center justify-center gap-2 h-full text-[#ECECEC] w-full">
+			<footer className="backdrop-blur-sm backdrop-brightness-50  w-full flex flex-col-reverse sm:px-16 px-7 py-12 lg:flex-row items-center justify-evenly">
+				<div className="w-full flex flex-row items-start gap-4 h-full justify-center">
+					<div className="grid grid-cols-1 grid-rows-5 items-center justify-center gap-2 h-full text-[#ECECEC] w-full text-nowrap">
 						<h6 className="text-3xl font-bold opacity-70 mb-2">Services</h6>
 						<span className="text-2xl font-semibold hover:translate-x-1 transition-all duration-300 cursor-pointer ">
 							Map
@@ -20,7 +20,7 @@ function Footer() {
 							Book ticket
 						</span>
 						<span className="text-2xl font-semibold hover:translate-x-1 transition-all duration-300 cursor-pointer ">
-							Packing checker
+							Pack checker
 						</span>
 					</div>
 					<div className="grid grid-cols-1 grid-rows-5 items-center justify-center gap-2 h-full text-[#ECECEC] w-full">

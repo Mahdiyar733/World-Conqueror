@@ -55,7 +55,7 @@ export default function Homepage() {
 							<figure className="flex-[2]">
 								<img
 									className=" object-cover h-full w-full"
-									src="./src/pages/Homepage/travel.jpg"
+									src="/src/pages/Homepage/travel.jpg"
 									alt="travel"
 								/>
 							</figure>
@@ -75,7 +75,7 @@ export default function Homepage() {
 							<figure className="flex-[2]">
 								<img
 									className=" object-cover h-full w-full"
-									src="./src/pages/Homepage/packed.jpg"
+									src="/src/pages/Homepage/packed.jpg"
 									alt="packed"
 								/>
 							</figure>
@@ -95,7 +95,7 @@ export default function Homepage() {
 							<figure className="flex-[2]">
 								<img
 									className=" object-cover h-full w-full"
-									src="./src/pages/Homepage/ticket.jpg"
+									src="/src/pages/Homepage/ticket.jpg"
 									alt="ticket"
 								/>
 							</figure>
