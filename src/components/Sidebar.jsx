@@ -3,8 +3,11 @@ import { Outlet } from "react-router";
 import AppNav from "./AppNav";
 import Logo from "./Logo";
 import styles from "./Sidebar.module.css";
+import { useContext } from "react";
+import { AppContext } from "../pages/AppLayout/AppLayout";
 
-function Sidebar({ err }) {
+function Sidebar() {
+	const { err } = useContext(AppContext);
 	return (
 		<div className={styles.sidebar}>
 			<Logo />

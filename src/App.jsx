@@ -5,49 +5,16 @@ import PageNotFound from "./pages/PageNotFound";
 import Pricing from "./pages/Pricing";
 import Product from "./pages/Product";
 import "./index.css";
-import AppLayout from "./pages/AppLayout";
+import AppLayout from "./pages/AppLayout/AppLayout";
 import CityList from "./components/CityList";
-import { useEffect, useState } from "react";
 import CountryList from "./components/CountryList";
 import City from "./components/City";
 import Form from "./components/Form";
-
-const BASE_URL = "http://localhost:8000";
+import { CitiesProvider } from "./contexts/CitiesContext";
 
 function App() {
-	const [isLoading, setIsLoading] = useState(true);
-	const [cities, setCities] = useState([]);
-	const [error, setError] = useState("");
-
-	useEffect(() => {
-		const controller = new AbortController();
-		const signal = controller.signal;
-		async function fetchData() {
-			try {
-				setIsLoading(true);
-				const res = await fetch(`${BASE_URL}/cities`, { signal });
-				if (!res.ok) throw new Error("Network response was not ok !");
-				const data = await res.json();
-				setCities(data);
-				setIsLoading(false);
-			} catch (err) {
-				if (err.name === "AbortError") {
-					throw new Error("Fetch aborted");
-				} else {
-					setError(err.message);
-				}
-			} finally {
-				setIsLoading(false);
-			}
-		}
-		fetchData();
-		return () => controller.abort();
-	}, []);
-
-	console.log(error);
-
 	return (
-		<div>
+		<CitiesProvider>
 			<BrowserRouter>
 				<Routes>
 					<Route
@@ -68,19 +35,14 @@ function App() {
 					/>
 					<Route
 						path="app"
-						element={<AppLayout err={error} />}>
+						element={<AppLayout />}>
 						<Route
 							index
 							element={<Navigate to="cities" />}
 						/>
 						<Route
 							path="cities"
-							element={
-								<CityList
-									cities={cities}
-									isLoading={isLoading}
-								/>
-							}
+							element={<CityList />}
 						/>
 						<Route
 							path="cities/:id"
@@ -88,7 +50,7 @@ function App() {
 						/>
 						<Route
 							path="countries"
-							element={<CountryList cities={cities} />}
+							element={<CountryList />}
 						/>
 						<Route
 							path="form"
@@ -101,7 +63,7 @@ function App() {
 					/>
 				</Routes>
 			</BrowserRouter>
-		</div>
+		</CitiesProvider>
 	);
 }
 

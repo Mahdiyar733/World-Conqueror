@@ -5,6 +5,7 @@ import ArrowdownSvg from "../../svg/ArrowdownSvg";
 import HeartSvg from "../../svg/HeartSvg";
 import { useState } from "react";
 import Footer from "../../components/Footer";
+import Toast from "../../components/utils/Toast";
 export default function Homepage() {
 	const [isOpenToast, setIsOpenToast] = useState(false);
 	const [isAnimating, setIsAnimating] = useState(false);
@@ -18,16 +19,6 @@ export default function Homepage() {
 		e.preventDefault();
 		setIsOpenToast(true);
 		setIsAnimating(true);
-		closeT();
-	}
-
-	function closeT() {
-		setTimeout(() => {
-			setIsAnimating(false);
-			setTimeout(() => {
-				setIsOpenToast(false);
-			}, 800);
-		}, 2000);
 	}
 
 	return (
@@ -209,22 +200,16 @@ export default function Homepage() {
 					</div>
 				</section>
 
-				{isOpenToast && (
-					<div
-						className={`toast toast-end min-w-[250px] ${
-							isAnimating
-								? isOpenToast && "animate-fade-left"
-								: "animate-jump-out"
-						} animate-duration-300`}>
-						<div
-							className={`alert alert-success text-2xl p-4 font-normal flex flex-row `}>
-							<span>Thank you for your feedback.</span>
-							<HeartSvg />
-						</div>
-					</div>
-				)}
+				<Toast
+					isOpenToast={isOpenToast}
+					isAnimating={isAnimating}
+					setIsAnimating={setIsAnimating}
+					setIsOpenToast={setIsOpenToast}>
+					<span>Thank you for your feedback.</span>
+					<HeartSvg />
+				</Toast>
 			</main>
-			<div className="bg-[url('./footerPic.jpg')] h-auto bg-cover bg-top">
+			<div className="bg-[url('/src/pages/Homepage/footerPic.jpg')] h-auto bg-cover bg-top">
 				<Footer />
 			</div>
 		</>
