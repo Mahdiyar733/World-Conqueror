@@ -95,7 +95,7 @@ export default function Homepage() {
 							<figure className="flex-[2]">
 								<img
 									className=" object-cover h-full w-full"
-									src="./ticket.jpg"
+									src="../Homepage/ticket.jpg"
 									alt="ticket"
 								/>
 							</figure>
