@@ -125,7 +125,7 @@ export default function Homepage() {
 						}}>
 						<div className="hero-overlay bg-opacity-40 backdrop-saturate-150"></div>
 						<div className="hero-content text-[#ECECEC] text-center ">
-							<div className="max-w-md lg:max-w-4xl md:max-w-2xl">
+							<div className="max-w-md lg:max-w-7xl md:max-w-2xl">
 								<h4 className="mb-5 text-7xl font-bold lg:text-8xl md:text-nowrap">
 									Get in touch with us !
 								</h4>
@@ -138,7 +138,7 @@ export default function Homepage() {
 								</p>
 								<form
 									action=""
-									className="flex flex-col items-center gap-3 text-black">
+									className="flex flex-col items-center gap-3 text-black dark:text-white">
 									<textarea
 										placeholder="any feedback"
 										spellCheck="false"
@@ -146,7 +146,7 @@ export default function Homepage() {
 										onChange={(e) => handleInput(e)}
 										className="textarea textarea-bordered textarea-xs w-full max-w-sm max-h-40 p-2 text-sm font-normal lg:max-w-xl md:max-w-lg lg:max-h-56 lg:text-2xl lg:min-h-32 md:min-h-24 md:text-xl md:p-4"></textarea>
 									{!inputVal && (
-										<p className="backdrop-blur-md backdrop-brightness-150 text-[#ECECEC] w-full p-2 rounded-lg animate-fade animate-duration-200">
+										<p className="backdrop-blur-md backdrop-brightness-150 text-[#ECECEC] max-w-ms p-2 rounded-lg animate-fade animate-duration-200 md:max-w-lg lg:max-w-xl w-full">
 											Please write something . . .
 										</p>
 									)}
