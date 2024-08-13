@@ -95,7 +95,7 @@ export default function Homepage() {
 							<figure className="flex-[2]">
 								<img
 									className=" object-cover h-full w-full"
-									src="../Homepage/ticket.jpg"
+									src="./src/pages/Homepage/ticket.jpg"
 									alt="ticket"
 								/>
 							</figure>
@@ -144,9 +144,9 @@ export default function Homepage() {
 										spellCheck="false"
 										value={inputVal}
 										onChange={(e) => handleInput(e)}
-										className="textarea textarea-bordered textarea-xs w-full max-w-sm max-h-40 p-2 text-sm font-normal lg:max-w-xl md:max-w-lg lg:max-h-56 lg:text-2xl lg:min-h-32 md:min-h-24 md:text-xl md:p-4"></textarea>
+										className="textarea textarea-bordered textarea-xs w-full max-w-sm max-h-40 p-2 text-sm font-normal lg:max-w-3xl md:max-w-lg lg:max-h-56 lg:text-2xl lg:min-h-32 md:min-h-24 md:text-xl md:p-4"></textarea>
 									{!inputVal && (
-										<p className="backdrop-blur-md backdrop-brightness-150 text-[#ECECEC] max-w-ms p-2 rounded-lg animate-fade animate-duration-200 md:max-w-lg lg:max-w-xl w-full">
+										<p className="backdrop-blur-md backdrop-brightness-150 text-[#ECECEC] max-w-ms p-2 rounded-lg animate-fade animate-duration-200 md:max-w-lg lg:max-w-3xl w-full">
 											Please write something . . .
 										</p>
 									)}

@@ -2,6 +2,7 @@
 import { Link } from "react-router-dom";
 import styles from "./CityItem.module.css";
 import { useCities } from "../contexts/CitiesContext";
+import { useEffect, useState } from "react";
 
 const formatDate = (date) =>
 	new Intl.DateTimeFormat("en", {
@@ -13,7 +14,10 @@ const formatDate = (date) =>
 function CityItem({ city }) {
 	const { currCity } = useCities();
 	const { cityName, emoji, date, id, position } = city;
-	const isCurr = id === currCity.id;
+	const [isCurr, setIsCurr] = useState(false);
+	useEffect(() => {
+		setIsCurr(id === currCity.id);
+	}, [id, currCity.id]);
 
 	return (
 		<li key={id}>

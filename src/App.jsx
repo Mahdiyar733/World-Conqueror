@@ -38,7 +38,7 @@ function App() {
 						element={<AppLayout />}>
 						<Route
 							index
-							element={<Navigate to="cities" />}
+							element={<Navigate to={`cities`} />}
 						/>
 						<Route
 							path="cities"

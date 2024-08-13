@@ -69,6 +69,7 @@ function CitiesProvider({ children }) {
 				error,
 				getCity,
 				currCity,
+				setCurrCity,
 			}}>
 			{children}
 		</CitiesContext.Provider>

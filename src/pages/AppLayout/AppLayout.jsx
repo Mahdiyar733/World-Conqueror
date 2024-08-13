@@ -2,14 +2,21 @@
 import styles from "./AppLayout.module.css";
 import Sidebar from "../../components/Sidebar";
 import Map from "../../components/Map";
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import Toast from "../../components/utils/Toast";
+import { useCities } from "../../contexts/CitiesContext";
 
 export const AppContext = createContext();
 
 function AppLayout({ err }) {
 	const [isOpenToast, setIsOpenToast] = useState(false);
 	const [isAnimating, setIsAnimating] = useState(false);
+	const { setCurrCity } = useCities();
+
+	useEffect(() => {
+		setCurrCity({});
+	}, [setCurrCity]);
+
 	return (
 		<AppContext.Provider
 			value={{ err, isAnimating, isOpenToast, setIsAnimating, setIsOpenToast }}>

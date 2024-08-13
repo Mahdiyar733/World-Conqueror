@@ -5,6 +5,7 @@ import styles from "./Form.module.css";
 import { useNavigate } from "react-router";
 import Button from "./utils/Button";
 import { AppContext } from "../pages/AppLayout/AppLayout";
+import { useCities } from "../contexts/CitiesContext";
 
 export function convertToEmoji(countryCode) {
 	const codePoints = countryCode
@@ -18,7 +19,7 @@ function Form() {
 	const [cityName, setCityName] = useState("");
 	const [notes, setNotes] = useState("");
 	const [date, setDate] = useState(new Date());
-
+	const { currCity } = useCities();
 	const { setIsAnimating, setIsOpenToast, isOpenToast } =
 		useContext(AppContext);
 
@@ -32,7 +33,11 @@ function Form() {
 
 	function handleBack(e) {
 		e.preventDefault();
-		navigate(-1);
+		if (currCity.lat && currCity.lng) {
+			const currLat = currCity.position.lat;
+			const currLng = currCity.position.lng;
+			navigate(`/app/cities/?lat=${currLat}&lng=${currLng}`);
+		} else navigate(-1);
 	}
 
 	return (
@@ -70,13 +75,13 @@ function Form() {
 			</div>
 			<div className={styles.buttons}>
 				<Button
-					classes="bg-primary text-[#ECECEC] btn-wide btn-lg"
+					classes="btn-primary text-[#ECECEC] btn-wide btn-lg"
 					handler={(e) => handleAdd(e)}
 					dis={isOpenToast ? true : false}>
 					Add
 				</Button>
 				<Button
-					classes="bg-red-500 text-white btn-lg"
+					classes="btn-error text-white btn-lg"
 					handler={(e) => handleBack(e)}>
 					&larr; Back
 				</Button>
