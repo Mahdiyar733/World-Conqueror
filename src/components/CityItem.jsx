@@ -12,12 +12,17 @@ const formatDate = (date) =>
 	}).format(new Date(date));
 
 function CityItem({ city }) {
-	const { currCity } = useCities();
+	const { currCity, deleteCity } = useCities();
 	const { cityName, emoji, date, id, position } = city;
 	const [isCurr, setIsCurr] = useState(false);
 	useEffect(() => {
 		setIsCurr(id === currCity.id);
 	}, [id, currCity.id]);
+
+	function handleDelete(e) {
+		e.preventDefault();
+		deleteCity(id);
+	}
 
 	return (
 		<li key={id}>
@@ -29,7 +34,22 @@ function CityItem({ city }) {
 				<span className={styles.emoji}>{emoji}</span>
 				<h3 className={styles.name}>{cityName}</h3>
 				<time className={styles.date}>({formatDate(date)})</time>
-				<button className={styles.deleteBtn}>&times;</button>
+				<button
+					className="btn btn-error btn-square rounded-lg hover:btn-outline transition-all duration-200"
+					onClick={(e) => handleDelete(e)}>
+					<svg
+						className="h-6 w-6"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke="currentColor">
+						<path
+							strokeLinecap="round"
+							strokeLinejoin="round"
+							strokeWidth="2"
+							d="M6 18L18 6M6 6l12 12"
+						/>
+					</svg>
+				</button>
 			</Link>
 		</li>
 	);

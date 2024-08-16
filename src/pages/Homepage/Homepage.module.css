@@ -8,7 +8,7 @@
 	background-size: cover;
 	background-position: center;
 	background-attachment: fixed;
-	padding: 2.5rem 5rem;
+	padding: 2.5rem 2rem;
 	min-height: 700px;
 }
 
@@ -17,6 +17,13 @@
 		padding: 2rem 1.7rem;
 	}
 }
+
+@media (min-width: 1024px) {
+	.homepage {
+		padding: 2.5rem 5rem;
+	}
+}
+
 @media (max-width: 385px) {
 	.homepage {
 		min-height: 900px;

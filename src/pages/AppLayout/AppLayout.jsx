@@ -5,6 +5,7 @@ import Map from "../../components/Map";
 import { createContext, useEffect, useState } from "react";
 import Toast from "../../components/utils/Toast";
 import { useCities } from "../../contexts/CitiesContext";
+import User from "../../components/User";
 
 export const AppContext = createContext();
 
@@ -23,6 +24,7 @@ function AppLayout({ err }) {
 			<div className={styles.app}>
 				<Sidebar />
 				<Map />
+				<User />
 				<Toast
 					isAnimating={isAnimating}
 					isOpenToast={isOpenToast}

@@ -1,11 +1,11 @@
-// "https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=0&longitude=0"
-
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import styles from "./Form.module.css";
 import { useNavigate } from "react-router";
 import Button from "./utils/Button";
 import { AppContext } from "../pages/AppLayout/AppLayout";
 import { useCities } from "../contexts/CitiesContext";
+import { useSearchParams } from "react-router-dom";
+import Spinner from "./Spinner";
 
 export function convertToEmoji(countryCode) {
 	const codePoints = countryCode
@@ -14,14 +14,22 @@ export function convertToEmoji(countryCode) {
 		.map((char) => 127397 + char.charCodeAt());
 	return String.fromCodePoint(...codePoints);
 }
+const BASE_URL = "https://api.bigdatacloud.net/data/reverse-geocode-client";
 
 function Form() {
-	const [cityName, setCityName] = useState("");
-	const [notes, setNotes] = useState("");
-	const [date, setDate] = useState(new Date());
-	const { currCity } = useCities();
 	const { setIsAnimating, setIsOpenToast, isOpenToast } =
 		useContext(AppContext);
+	const { currCity, postCity } = useCities();
+	const [cityName, setCityName] = useState("");
+	const [country, setCountry] = useState("");
+	const [notes, setNotes] = useState("");
+	const [date, setDate] = useState(new Date());
+	const [searchParams, setSearchParams] = useSearchParams();
+	const mapLat = searchParams.get("lat");
+	const mapLng = searchParams.get("lng");
+	const [isLoading, setIsLoading] = useState(false);
+	const [err, setErr] = useState("");
+	const [emoji, setEmoji] = useState("");
 
 	const navigate = useNavigate();
 
@@ -29,6 +37,7 @@ function Form() {
 		e.preventDefault();
 		setIsAnimating(true);
 		setIsOpenToast(true);
+		handleSubmit();
 	}
 
 	function handleBack(e) {
@@ -39,6 +48,55 @@ function Form() {
 			navigate(`/app/cities/?lat=${currLat}&lng=${currLng}`);
 		} else navigate(-1);
 	}
+
+	async function handleSubmit() {
+		const newCity = {
+			cityName,
+			country,
+			emoji,
+			date,
+			notes,
+			position: {
+				lat: mapLat,
+				lng: mapLng,
+			},
+		};
+		await postCity(newCity);
+		navigate("/app/cities");
+	}
+
+	useEffect(() => {
+		if (!mapLat && !mapLng) return;
+
+		async function fetchCityInfo() {
+			try {
+				setIsLoading;
+				const res = await fetch(
+					`${BASE_URL}?latitude=${mapLat}&longitude=${mapLng}`,
+				);
+				const data = await res.json();
+				console.log(data);
+				if (data.countryName == "")
+					throw new Error("Please pick somewhere else.");
+				else {
+					setCityName(data.city || data.locality || "");
+					setCountry(data.countryName);
+					setEmoji(convertToEmoji(data.countryCode));
+					setErr("");
+				}
+			} catch (e) {
+				setErr(e.message);
+				console.log(e);
+			} finally {
+				setIsLoading(false);
+			}
+		}
+		fetchCityInfo();
+	}, [mapLat, mapLng]);
+
+	if (isLoading) return <Spinner />;
+	if (!mapLat && !mapLng) return <h1>click on the map first</h1>;
+	if (err) return <p>{err}</p>;
 
 	return (
 		<form className={styles.form}>
@@ -51,7 +109,7 @@ function Form() {
 					onChange={(e) => setCityName(e.target.value)}
 					value={cityName}
 				/>
-				{/* <span className={styles.flag}>{emoji}</span> */}
+				<span className={styles.flag}>{emoji}</span>
 			</div>
 			<div className={styles.row}>
 				<label htmlFor="date">When did you go to {cityName}?</label>

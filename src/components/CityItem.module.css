@@ -16,6 +16,7 @@
 }
 
 .cityItem--active {
+	box-sizing: border-box;
 	border: 2px solid #4a00ff;
 	border-left: 5px solid #4a00ff;
 }

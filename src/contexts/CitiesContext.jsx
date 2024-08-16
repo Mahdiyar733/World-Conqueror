@@ -37,6 +37,7 @@ function CitiesProvider({ children }) {
 	}, []);
 
 	function getCity(id) {
+		if (currCity.id == id) return;
 		const controller = new AbortController();
 		const signal = controller.signal;
 		async function fetchCity() {
@@ -61,15 +62,59 @@ function CitiesProvider({ children }) {
 		return () => controller.abort();
 	}
 
+	async function postCity(newCity) {
+		try {
+			setIsLoading(true);
+			const res = await fetch(`${BASE_URL}/cities`, {
+				method: "POST",
+				body: JSON.stringify(newCity),
+				headers: { "Content-Type": "application/json" },
+			});
+			if (!res.ok) throw new Error("Network response was not ok !");
+			const data = await res.json();
+			setCities((cities) => [...cities, data]);
+		} catch (err) {
+			if (err.name === "AbortError") {
+				throw new Error("Fetch aborted");
+			} else {
+				setError(err.message);
+			}
+		} finally {
+			setIsLoading(false);
+		}
+	}
+
+	async function deleteCity(id) {
+		try {
+			setIsLoading(true);
+			const res = await fetch(`${BASE_URL}/cities/${id}`, {
+				method: "DELETE",
+			});
+			if (!res.ok) throw new Error("Network response was not ok !");
+			setCities((cities) => cities.filter((city) => city.id !== id));
+		} catch (err) {
+			if (err.name === "AbortError") {
+				throw new Error("Fetch aborted");
+			} else {
+				setError(err.message);
+			}
+		} finally {
+			setIsLoading(false);
+		}
+	}
+
 	return (
 		<CitiesContext.Provider
 			value={{
 				isLoading,
 				cities,
+				setCities,
 				error,
 				getCity,
+				postCity,
 				currCity,
 				setCurrCity,
+				deleteCity,
 			}}>
 			{children}
 		</CitiesContext.Provider>
