@@ -12,7 +12,7 @@ const AuthContext = createContext();
 const initState = {
 	user: FAKE_USER,
 	isAuth: false,
-	error: "",
+	error: { target: "", message: "" },
 };
 
 function reducer(state, action) {
@@ -22,7 +22,14 @@ function reducer(state, action) {
 		case "logout":
 			return { ...state, user: null, isAuth: false };
 		case "err":
-			return { ...state, error: "Username or Password is wrong !" };
+			return {
+				...state,
+				error: {
+					...state.error,
+					message: action.payload.message,
+					target: action.payload.target,
+				},
+			};
 		default:
 	}
 }
@@ -31,10 +38,27 @@ function AuthProvider({ children }) {
 	const [{ user, isAuth, error }, dispatch] = useReducer(reducer, initState);
 
 	function login(email, pass) {
+		if (!email.trim()) {
+			dispatch({
+				type: "err",
+				payload: { message: "Email is required", target: "email" },
+			});
+			return;
+		}
+		if (!pass.trim()) {
+			dispatch({
+				type: "err",
+				payload: { message: "Password is required", target: "password" },
+			});
+			return;
+		}
 		if (email === FAKE_USER.email && pass === FAKE_USER.password) {
 			dispatch({ type: "login", payload: FAKE_USER });
 		} else {
-			dispatch({ type: "err" });
+			dispatch({
+				type: "err",
+				payload: { message: "Email or Password is wrong !", target: "both" },
+			});
 		}
 	}
 
@@ -43,7 +67,8 @@ function AuthProvider({ children }) {
 	}
 
 	return (
-		<AuthContext.Provider value={{ login, logout, user, isAuth, error }}>
+		<AuthContext.Provider
+			value={{ login, logout, user, isAuth, error, dispatch }}>
 			{children}
 		</AuthContext.Provider>
 	);

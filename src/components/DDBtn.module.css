@@ -1,0 +1,15 @@
+.menu {
+	padding: 2.5rem 2rem;
+}
+
+@media (max-width: 500px) {
+	.menu {
+		padding: 2rem 1.7rem;
+	}
+}
+
+@media (min-width: 1024px) {
+	.menu {
+		padding: 2.5rem 5rem;
+	}
+}

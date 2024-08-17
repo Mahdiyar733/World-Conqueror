@@ -1,0 +1,22 @@
+.homepage {
+	padding: 2.5rem 2rem;
+	background-image: linear-gradient(
+			rgba(89, 98, 104, 0.7),
+			rgba(36, 42, 46, 0.8)
+		),
+		url("./bg-login.jpg");
+	background-size: cover;
+	background-position: center;
+}
+
+@media (max-width: 500px) {
+	.homepage {
+		padding: 2rem 1.7rem;
+	}
+}
+
+@media (min-width: 1024px) {
+	.homepage {
+		padding: 2.5rem 5rem;
+	}
+}

@@ -1,8 +1,13 @@
-import { useState } from "react";
+/* eslint-disable react/prop-types */
+import { createContext, useContext, useState } from "react";
 import MenuSvg from "../svg/MenuSvg";
+import styles from "./DDBtn.module.css";
 import CloseSvg from "../svg/CloseSvg";
 import { NavLink } from "react-router-dom";
-function DropdownBtn() {
+
+export const DropdownContext = createContext();
+
+export function DropdownProvider({ children }) {
 	const [isOpen, setIsOpen] = useState(false);
 
 	function handleOpening() {
@@ -10,14 +15,27 @@ function DropdownBtn() {
 	}
 
 	return (
-		<div className="flex md:hidden mr-7">
+		<DropdownContext.Provider value={{ isOpen, handleOpening }}>
+			{children}
+		</DropdownContext.Provider>
+	);
+}
+
+function DropdownBtn() {
+	const { isOpen, handleOpening } = useContext(DropdownContext);
+
+	return (
+		<div
+			className="flex md:hidden mr-7"
+			style={{ zIndex: 1000 }}>
 			<button
 				type="button"
 				onClick={handleOpening}>
 				{isOpen ? <CloseSvg /> : <MenuSvg />}
 			</button>
 			{isOpen ? (
-				<div className="flex flex-col p-6 gap-6 items-center absolute top-full mt-2 rounded-lg right-0 left-0 mb-8 bg-[#72787E] animate-fade">
+				<div
+					className={`${styles.menu} flex flex-col p-6 gap-6 items-center absolute top-40 mt-2 rounded-lg right-0 left-0 mb-8 bg-[#72787E] animate-fade`}>
 					<NavLink
 						to="/"
 						className={({ isActive }) =>
@@ -28,6 +46,18 @@ function DropdownBtn() {
 							}`
 						}>
 						Home
+					</NavLink>
+
+					<NavLink
+						to="/login"
+						className={({ isActive }) =>
+							`hover:bg-primary hover:text-[#ECECEC] transition-all duration-150  py-5 animate-fade-right animate-delay-200 flex-1 w-full flex items-center justify-center rounded-lg text-3xl font-semibold ${
+								isActive
+									? "bg-primary text-[#ECECEC] no-animation cursor-auto"
+									: "bg-[#ECECEC] btn text-primary"
+							}`
+						}>
+						Login
 					</NavLink>
 
 					<NavLink
