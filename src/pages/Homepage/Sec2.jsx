@@ -1,0 +1,74 @@
+import ArrowdownSvg from "../../svg/ArrowdownSvg";
+import styles from "./Sec.module.css";
+
+export default function Sec2() {
+	return (
+		<main
+			className={`${styles.homepage} lg:px-16 sm:px-24 md:px-36 py-6 px-20 h-auto lg:h-dvh`}>
+			<section>
+				<div className="text-7xl mb-9 flex flex-row items-center justify-center">
+					<h4>Tooltips</h4>
+					<ArrowdownSvg />
+				</div>
+				<div className="flex flex-col items-center justify-center gap-8 lg:flex-row lg:h-[400px]">
+					<div className="card backdrop-blur-lg backdrop-brightness-150 flex-1 h-full flex justify-between max-w-[383px]">
+						<figure className="flex-[2]">
+							<img
+								className=" object-cover h-full w-full"
+								src="./src/pages/Homepage/travel.jpg"
+								alt="travel"
+							/>
+						</figure>
+						<div className="flex w-full flex-col items-center justify-center p-5 gap-4 h-full flex-1">
+							<h3 className="text-4xl font-semibold">Where should i travel?</h3>
+							<p className="text-2xl">
+								there is information about where you want to trip !
+							</p>
+							<button className="btn btn-wide btn-lg btn-primary hover:bg-[#ECECEC] hover:text-primary">
+								Learn more
+							</button>
+						</div>
+					</div>
+					<div className="card backdrop-blur-lg backdrop-brightness-150 flex-1 h-full max-w-[383px]">
+						<figure className="flex-[2]">
+							<img
+								className=" object-cover h-full w-full"
+								src="./src/pages/Homepage/packed.jpg"
+								alt="packed"
+							/>
+						</figure>
+						<div className="flex w-full flex-col items-center justify-center p-5 gap-4 h-full flex-1">
+							<h3 className="text-4xl font-semibold">
+								Did i picked everything?
+							</h3>
+							<p className="text-2xl">
+								there is website that help you to check everything to pack.
+							</p>
+							<button className="btn btn-wide btn-lg btn-primary hover:bg-[#ECECEC] hover:text-primary">
+								Open Flyaway
+							</button>
+						</div>
+					</div>
+					<div className="card backdrop-blur-lg backdrop-brightness-150 flex-1 h-full max-w-[383px]">
+						<figure className="flex-[2]">
+							<img
+								className=" object-cover h-full w-full"
+								src="./src/pages/Homepage/ticket.jpg"
+								alt="ticket"
+							/>
+						</figure>
+						<div className="flex w-full flex-col items-center justify-center p-5 gap-4 h-full flex-1">
+							<h3 className="text-4xl font-semibold">How can i get tickets?</h3>
+							<p className="text-2xl">
+								From this website you can book your ticket !
+							</p>
+							<button className="btn btn-wide btn-lg btn-primary hover:bg-[#ECECEC] hover:text-primary">
+								Book ticket
+							</button>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+	);
+}

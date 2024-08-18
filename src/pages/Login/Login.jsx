@@ -28,20 +28,11 @@ export default function Login() {
 			<PageNav />
 			{!isOpen && (
 				<div
-					className={`h-full w-full md:p-20 mt-7 animate-fade-down backdrop-blur-md backdrop-brightness-150 backdrop-saturate-150 rounded-lg`}>
-					<div className="h-full w-full rounded-lg flex flex-col p-6 md:flex-row-reverse">
-						<div className="h-full rounded-lg overflow-hidden md:w-1/2">
-							<img
-								className="h-full w-full object-cover object-left hue-rotate-180"
-								src="/src/pages/Login/map.jpg"
-								alt="map pic"
-							/>
-						</div>
-						<div className="divider opacity-100 text-white md:divider-horizontal"></div>
+					className={`h-full w-full md:p-20 mt-7 animate-fade backdrop-blur-md backdrop-brightness-150 backdrop-saturate-150 rounded-lg p-9`}>
+					<div className="h-full w-full rounded-lg flex flex-col bg-[url(/src/pages/Login/map.jpg)] bg-cover bg-center">
 						<form
-							className="h-full w-full rounded-lg bg-[#7285C0] bg-opacity-75 flex flex-col items-center justify-center gap-3 md:w-1/2"
+							className="h-full backdrop-hue-rotate-180 rounded-lg backdrop-brightness-75 backdrop-blur-[1px] flex flex-col items-center justify-center gap-3 w-full"
 							onSubmit={(e) => handleSub(e)}>
-							<h1 className="text-5xl font-semibold mb-8">Login form</h1>
 							<label
 								className={`input input-lg flex items-center gap-2 bg-neutral w-4/5 ${
 									error.target === "email" && "input-error"

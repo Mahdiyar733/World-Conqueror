@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import MenuSvg from "../svg/MenuSvg";
 import styles from "./DDBtn.module.css";
 import CloseSvg from "../svg/CloseSvg";
@@ -15,14 +15,19 @@ export function DropdownProvider({ children }) {
 	}
 
 	return (
-		<DropdownContext.Provider value={{ isOpen, handleOpening }}>
+		<DropdownContext.Provider value={{ isOpen, setIsOpen, handleOpening }}>
 			{children}
 		</DropdownContext.Provider>
 	);
 }
 
 function DropdownBtn() {
-	const { isOpen, handleOpening } = useContext(DropdownContext);
+	const { isOpen, handleOpening, setIsOpen } = useContext(DropdownContext);
+
+	useEffect(() => {
+		if (isOpen) setIsOpen(false);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
 
 	return (
 		<div
