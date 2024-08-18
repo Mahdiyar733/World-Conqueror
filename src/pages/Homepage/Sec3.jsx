@@ -16,6 +16,7 @@ function Sec3() {
 		e.preventDefault();
 		setIsOpenToast(true);
 		setIsAnimating(true);
+		setInputVal("");
 	}
 
 	return (
@@ -55,13 +56,20 @@ function Sec3() {
 										Please write something . . .
 									</p>
 								)}
-								<button
-									type="submit"
-									disabled={isAnimating || !inputVal}
-									className="btn btn-wide btn-md text-xl btn-primary hover:bg-[#ECECEC] hover:text-primary lg:btn-lg animate-fade"
-									onClick={(e) => handleSubmit(e)}>
-									Submit
-								</button>
+								{inputVal ? (
+									!isAnimating || !inputVal ? (
+										<button
+											type="submit"
+											className="btn btn-wide btn-md text-xl btn-primary hover:bg-[#ECECEC] hover:text-primary lg:btn-lg animate-fade-up"
+											onClick={(e) => handleSubmit(e)}>
+											Submit
+										</button>
+									) : (
+										""
+									)
+								) : (
+									""
+								)}
 							</form>
 						</div>
 					</div>

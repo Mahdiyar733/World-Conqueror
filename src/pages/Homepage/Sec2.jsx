@@ -14,7 +14,7 @@ export default function Sec2() {
 					<div className="card backdrop-blur-lg backdrop-brightness-150 flex-1 h-full flex justify-between max-w-[383px]">
 						<figure className="flex-[2]">
 							<img
-								className=" object-cover h-full w-full"
+								className="object-cover h-full w-full"
 								src="./travel.jpg"
 								alt="travel"
 							/>
