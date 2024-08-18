@@ -40,11 +40,11 @@ function DropdownBtn() {
 			</button>
 			{isOpen ? (
 				<div
-					className={`${styles.menu} flex flex-col p-6 gap-6 items-center absolute top-40 mt-2 rounded-lg right-0 left-0 mb-8 bg-[#72787E] animate-fade`}>
+					className={`${styles.menu} flex flex-col p-6 gap-6 items-center absolute top-48 mt-2 rounded-lg right-0 left-0 mb-8 bg-[#72787E] animate-fade`}>
 					<NavLink
 						to="/"
 						className={({ isActive }) =>
-							`hover:bg-primary hover:text-[#ECECEC] transition-all duration-150  py-5 animate-fade-right animate-delay-200 flex-1 w-full flex items-center justify-center rounded-lg text-3xl font-semibold ${
+							`hover:bg-primary hover:text-[#ECECEC] transition-all duration-150 py-5 animate-fade-right animate-delay-200 flex-1 w-full flex items-center justify-center rounded-lg text-3xl font-semibold ${
 								isActive
 									? "bg-primary text-[#ECECEC] no-animation cursor-auto"
 									: "bg-[#ECECEC] btn text-primary"
