@@ -21,7 +21,7 @@ function Sec3() {
 
 	return (
 		<main
-			className={`${styles.homepage} lg:px-16 sm:px-24 md:px-36 px-10 lg:pt-0 py-20 h-auto lg:h-dvh`}>
+			className={`${styles.homepage} lg:px-28 sm:px-24 md:px-36 px-10 lg:pt-0 py-20 h-auto lg:h-dvh`}>
 			<section style={{ height: "100%" }}>
 				<div
 					className="hero rounded-lg overflow-hidden"
@@ -29,8 +29,8 @@ function Sec3() {
 						backgroundImage:
 							"url(https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.webp)",
 					}}>
-					<div className="hero-overlay bg-opacity-40 backdrop-saturate-150"></div>
-					<div className="hero-content text-[#ECECEC] text-center py-20 min-h-[500px]">
+					<div className="hero-overlay bg-opacity-40 backdrop-saturate-150 backdrop-opacity-10"></div>
+					<div className="hero-content text-[#ECECEC] text-center py-10 min-h-[500px]">
 						<div className="max-w-lg lg:max-w-7xl md:max-w-2xl">
 							<h4 className="mb-5 text-7xl font-bold lg:text-8xl md:text-nowrap">
 								Get in touch with us !

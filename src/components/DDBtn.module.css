@@ -1,6 +1,5 @@
 .menu {
 	/* padding: 2.5rem 2rem; */
-	top: 12rem;
 	right: 2rem;
 	left: 2rem;
 }
@@ -8,7 +7,7 @@
 @media (max-width: 500px) {
 	.menu {
 		/* padding: 2rem 1.7rem; */
-		top: 10rem;
+		top: 12rem;
 		right: 1.7rem;
 		left: 1.7rem;
 	}
