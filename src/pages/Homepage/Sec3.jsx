@@ -29,7 +29,7 @@ function Sec3() {
 							"url(https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.webp)",
 					}}>
 					<div className="hero-overlay bg-opacity-40 backdrop-saturate-150"></div>
-					<div className="hero-content text-[#ECECEC] text-center py-20">
+					<div className="hero-content text-[#ECECEC] text-center py-20 min-h-[500px]">
 						<div className="max-w-lg lg:max-w-7xl md:max-w-2xl">
 							<h4 className="mb-5 text-7xl font-bold lg:text-8xl md:text-nowrap">
 								Get in touch with us !

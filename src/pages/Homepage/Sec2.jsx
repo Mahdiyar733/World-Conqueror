@@ -22,7 +22,7 @@ export default function Sec2() {
 						<div className="flex w-full flex-col items-center justify-center p-5 gap-4 h-full flex-1">
 							<h3 className="text-4xl font-semibold">Where should i travel?</h3>
 							<p className="text-2xl">
-								there is information about where you want to trip !
+								information about where you want to trip !
 							</p>
 							<button className="btn btn-wide btn-lg btn-primary hover:bg-[#ECECEC] hover:text-primary">
 								Learn more
@@ -42,11 +42,15 @@ export default function Sec2() {
 								Did i picked everything?
 							</h3>
 							<p className="text-2xl">
-								there is website that help you to check everything to pack.
+								website that help you to check everything to pack.
 							</p>
-							<button className="btn btn-wide btn-lg btn-primary hover:bg-[#ECECEC] hover:text-primary">
-								Open Flyaway
-							</button>
+							<a
+								href="https://fly-away-app1.netlify.app"
+								target="_blank">
+								<button className="btn btn-wide btn-lg btn-primary hover:bg-[#ECECEC] hover:text-primary">
+									Open Flyaway
+								</button>
+							</a>
 						</div>
 					</div>
 					<div className="card backdrop-blur-lg backdrop-brightness-150 flex-1 h-full max-w-[383px]">
