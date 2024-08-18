@@ -1,10 +1,13 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-import HomePage from "./pages/Homepage/Homepage";
-import Login from "./pages/Login/Login";
-import PageNotFound from "./pages/PageNotFound";
-import Pricing from "./pages/Pricing";
-import Product from "./pages/Product";
+import { lazy, Suspense } from "react";
 import "./index.css";
+
+const HomePage = lazy(() => import("./pages/Homepage/Homepage"));
+const Login = lazy(() => import("./pages/Login/Login"));
+const Pricing = lazy(() => import("./pages/Pricing"));
+const Product = lazy(() => import("./pages/Product"));
+const PageNotFound = lazy(() => import("./pages/PageNotFound"));
+
 import AppLayout from "./pages/AppLayout/AppLayout";
 import CityList from "./components/CityList";
 import CountryList from "./components/CountryList";
@@ -14,6 +17,7 @@ import { CitiesProvider } from "./contexts/CitiesContext";
 import { AuthProvider } from "./contexts/authContext";
 import ProtectPages from "./pages/ProtectPages";
 import { DropdownProvider } from "./components/DropdownBtn";
+import SpinnerFullPage from "./components/SpinnerFullPage";
 
 function App() {
 	return (
@@ -21,56 +25,58 @@ function App() {
 			<DropdownProvider>
 				<CitiesProvider>
 					<BrowserRouter>
-						<Routes>
-							<Route
-								index
-								element={<HomePage />}
-							/>
-							<Route
-								path="login"
-								element={<Login />}
-							/>
-							<Route
-								path="pricing"
-								element={<Pricing />}
-							/>
-							<Route
-								path="product"
-								element={<Product />}
-							/>
-							<Route
-								path="app"
-								element={
-									<ProtectPages>
-										<AppLayout />
-									</ProtectPages>
-								}>
+						<Suspense fallback={<SpinnerFullPage />}>
+							<Routes>
 								<Route
 									index
-									element={<Navigate to={`cities`} />}
+									element={<HomePage />}
 								/>
 								<Route
-									path="cities"
-									element={<CityList />}
+									path="login"
+									element={<Login />}
 								/>
 								<Route
-									path="cities/:id"
-									element={<City />}
+									path="pricing"
+									element={<Pricing />}
 								/>
 								<Route
-									path="countries"
-									element={<CountryList />}
+									path="product"
+									element={<Product />}
 								/>
 								<Route
-									path="form"
-									element={<Form />}
+									path="app"
+									element={
+										<ProtectPages>
+											<AppLayout />
+										</ProtectPages>
+									}>
+									<Route
+										index
+										element={<Navigate to={`cities`} />}
+									/>
+									<Route
+										path="cities"
+										element={<CityList />}
+									/>
+									<Route
+										path="cities/:id"
+										element={<City />}
+									/>
+									<Route
+										path="countries"
+										element={<CountryList />}
+									/>
+									<Route
+										path="form"
+										element={<Form />}
+									/>
+								</Route>
+								<Route
+									path="*"
+									element={<PageNotFound />}
 								/>
-							</Route>
-							<Route
-								path="*"
-								element={<PageNotFound />}
-							/>
-						</Routes>
+							</Routes>
+						</Suspense>
 					</BrowserRouter>
 				</CitiesProvider>
 			</DropdownProvider>
