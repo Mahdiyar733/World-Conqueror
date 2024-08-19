@@ -6,6 +6,7 @@ import Sec2 from "./Sec2";
 import Sec3 from "./Sec3";
 import { Fragment, useContext } from "react";
 import { DropdownContext } from "../../components/DropdownBtn";
+import DropdownMenu from "../../components/DropdownMenu";
 
 export default function Homepage() {
 	const { isOpen } = useContext(DropdownContext);
@@ -15,7 +16,7 @@ export default function Homepage() {
 			<>
 				<main className={`${styles.homepage} h-dvh`}>
 					<PageNav />
-					{!isOpen && (
+					{!isOpen ? (
 						<section className=" animate-fade">
 							<h1>
 								You travel the world.
@@ -33,6 +34,10 @@ export default function Homepage() {
 								Start Tracking Now
 							</Link>
 						</section>
+					) : (
+						<div className="w-full mt-6	md:hidden flex items-center justify-center">
+							<DropdownMenu />
+						</div>
 					)}
 				</main>
 				{!isOpen && (
