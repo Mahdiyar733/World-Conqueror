@@ -14,7 +14,7 @@ export default function Homepage() {
 	return (
 		<Fragment>
 			<>
-				<main className={`${styles.homepage} h-dvh`}>
+				<main className={`${styles.homepage} h-dvh `}>
 					<PageNav />
 					{!isOpen ? (
 						<section className=" animate-fade">

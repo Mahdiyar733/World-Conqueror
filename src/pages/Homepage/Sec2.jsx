@@ -15,7 +15,7 @@ export default function Sec2() {
 						<figure className="flex-[2]">
 							<img
 								className="object-cover h-full w-full"
-								src="./travel.jpg"
+								src="/travel.jpg"
 								alt="travel"
 							/>
 						</figure>

@@ -25,13 +25,13 @@ function Sec3() {
 				setIsAnimating,
 				modalIsOpen,
 				setModalIsOpen,
-				handleModal,
 			}}>
 			<main
-				className={`${styles.homepage} lg:px-28 sm:px-24 md:px-36 px-10 lg:pt-0 py-20 h-auto lg:h-dvh`}>
+				className={`${styles.homepage} lg:px-28 sm:px-24 md:px-36 px-10 lg:pt-0 py-20 h-auto lg:h-dvh scroll-mt-3`}
+				id="feedback">
 				<section style={{ height: "100%" }}>
 					<div
-						className="hero rounded-lg overflow-hidden"
+						className="hero rounded-lg overflow-hidden "
 						style={{
 							backgroundImage:
 								"url(https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.webp)",
@@ -50,11 +50,13 @@ function Sec3() {
 									suggestions, or critiques, please feel free to tell us.
 								</p>
 								{!modalIsOpen && (
-									<Button
-										handler={handleModal}
-										classes="btn-wide btn-lg btn-warning">
-										Send feedback
-									</Button>
+									<a href="#feedback">
+										<Button
+											handler={handleModal}
+											classes="btn-wide btn-lg btn-warning">
+											Send feedback
+										</Button>
+									</a>
 								)}
 								{modalIsOpen && <Form />}
 							</div>
