@@ -7,6 +7,7 @@ import { useCities } from "../contexts/CitiesContext";
 import { useSearchParams } from "react-router-dom";
 import { SpinnerCities } from "./Spinner";
 
+// eslint-disable-next-line react-refresh/only-export-components
 export function convertToEmoji(countryCode) {
 	const codePoints = countryCode
 		.toUpperCase()
@@ -24,6 +25,7 @@ function Form() {
 	const [country, setCountry] = useState("");
 	const [notes, setNotes] = useState("");
 	const [date, setDate] = useState(new Date());
+	// eslint-disable-next-line no-unused-vars
 	const [searchParams, setSearchParams] = useSearchParams();
 	const mapLat = searchParams.get("lat");
 	const mapLng = searchParams.get("lng");
@@ -136,12 +138,14 @@ function Form() {
 				/>
 			</div>
 			<div className={styles.buttons}>
-				<Button
-					classes="btn-primary text-[#ECECEC] btn-wide btn-lg"
-					handler={(e) => handleAdd(e)}
-					dis={isOpenToast ? true : false}>
-					Add
-				</Button>
+				{cityName && (
+					<Button
+						classes="btn-primary text-[#ECECEC] btn-wide btn-lg"
+						handler={(e) => handleAdd(e)}
+						dis={isOpenToast ? true : false}>
+						Add
+					</Button>
+				)}
 				<Button
 					classes="btn-error text-white btn-lg"
 					handler={(e) => handleBack(e)}>

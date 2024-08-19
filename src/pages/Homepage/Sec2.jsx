@@ -1,4 +1,4 @@
-import ArrowdownSvg from "../../svg/ArrowdownSvg";
+// import ArrowdownSvg from "../../svg/ArrowdownSvg";
 import styles from "./Sec.module.css";
 
 export default function Sec2() {
@@ -6,10 +6,10 @@ export default function Sec2() {
 		<main
 			className={`${styles.homepage} lg:px-16 sm:px-24 md:px-36 py-6 px-20 h-auto lg:h-dvh`}>
 			<section>
-				<div className="text-7xl mb-9 flex flex-row items-center justify-center">
+				{/* <div className="text-7xl mb-9 flex flex-row items-center justify-center">
 					<h4>Tooltips</h4>
 					<ArrowdownSvg />
-				</div>
+				</div> */}
 				<div className="flex flex-col items-center justify-center gap-8 lg:flex-row lg:h-[400px]">
 					<div className="card backdrop-blur-lg backdrop-brightness-150 flex-1 h-full flex justify-between max-w-[383px]">
 						<figure className="flex-[2]">
@@ -33,7 +33,7 @@ export default function Sec2() {
 						<figure className="flex-[2]">
 							<img
 								className=" object-cover h-full w-full"
-								src="./src/pages/Homepage/packed.jpg"
+								src="/src/pages/Homepage/packed.jpg"
 								alt="packed"
 							/>
 						</figure>

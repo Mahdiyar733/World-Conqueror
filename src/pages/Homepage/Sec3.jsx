@@ -2,7 +2,7 @@ import { createContext, useState } from "react";
 import Toast from "../../components/utils/Toast";
 import HeartSvg from "../../svg/HeartSvg";
 import styles from "./Sec.module.css";
-import Form from "../../components/utils/Form";
+import Form from "../../components/utils/ModalBox";
 import Button from "../../components/utils/Button";
 
 export const Sec3Context = createContext("");

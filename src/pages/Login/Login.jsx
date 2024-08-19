@@ -4,6 +4,7 @@ import { useAuth } from "../../contexts/authContext";
 import { useContext, useEffect, useState } from "react";
 import styles from "./Login.module.css";
 import { DropdownContext } from "../../components/DropdownBtn";
+import DropdownMenu from "../../components/DropdownMenu";
 export default function Login() {
 	// PRE-FILL FOR DEV PURPOSES
 	const [email, setEmail] = useState("rez@example.com");
@@ -24,14 +25,14 @@ export default function Login() {
 
 	return (
 		<main
-			className={`${styles.homepage} h-dvh w-screen flex flex-col justify-between`}>
+			className={`${styles.homepage} h-dvh w-screen flex flex-col justify-normal`}>
 			<PageNav />
-			{!isOpen && (
+			{!isOpen ? (
 				<div
-					className={`h-full w-full md:p-20 mt-7 animate-fade backdrop-blur-md backdrop-brightness-150 backdrop-saturate-150 rounded-lg p-9`}>
-					<div className="h-full w-full rounded-lg flex flex-col bg-[url(/src/pages/Login/map.jpg)] bg-cover bg-center">
+					className={`h-full w-full md:p-20 mt-7 animate-fade-up backdrop-brightness-150 backdrop-saturate-150 rounded-lg p-9`}>
+					<div className="h-full w-full rounded-lg flex flex-col  bg-cover bg-center">
 						<form
-							className="h-full backdrop-hue-rotate-180 rounded-lg backdrop-brightness-75 backdrop-blur-[1px] flex flex-col items-center justify-center gap-3 w-full"
+							className="h-full backdrop-hue-rotate-180 rounded-lg backdrop-brightness-75  flex flex-col items-center justify-center gap-3 w-full"
 							onSubmit={(e) => handleSub(e)}>
 							<label
 								className={`input input-lg flex items-center gap-2 bg-neutral w-4/5 ${
@@ -95,6 +96,8 @@ export default function Login() {
 						</form>
 					</div>
 				</div>
+			) : (
+				<DropdownMenu />
 			)}
 		</main>
 	);

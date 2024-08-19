@@ -17,7 +17,7 @@ export default function Homepage() {
 				<main className={`${styles.homepage} h-dvh `}>
 					<PageNav />
 					{!isOpen ? (
-						<section className=" animate-fade">
+						<section className="animate-fade-down">
 							<h1>
 								You travel the world.
 								<br />
@@ -35,9 +35,7 @@ export default function Homepage() {
 							</Link>
 						</section>
 					) : (
-						<div className="w-full mt-6	md:hidden flex items-center justify-center">
-							<DropdownMenu />
-						</div>
+						<DropdownMenu />
 					)}
 				</main>
 				{!isOpen && (

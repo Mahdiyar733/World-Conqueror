@@ -4,13 +4,11 @@
 	display: flex;
 	gap: 1.6rem;
 	align-items: center;
-
 	background-color: var(--color-dark--2);
 	border-radius: 7px;
 	padding: 1rem 2rem;
 	border-left: 5px solid #4a00ff;
 	cursor: pointer;
-
 	color: inherit;
 	text-decoration: none;
 }
@@ -52,4 +50,19 @@
 .deleteBtn:hover {
 	background-color: var(--color-brand--1);
 	color: var(--color-dark--1);
+}
+
+@media (max-width: 490px) {
+	.emoji {
+		font-size: 2rem;
+	}
+	.name {
+		font-size: 1.2rem;
+	}
+	.date {
+		font-size: 1rem;
+	}
+	.deleteBtn {
+		height: 1.5rem;
+	}
 }

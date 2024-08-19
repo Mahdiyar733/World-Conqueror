@@ -4,8 +4,8 @@ import "./index.css";
 
 const HomePage = lazy(() => import("./pages/Homepage/Homepage"));
 const Login = lazy(() => import("./pages/Login/Login"));
-const Pricing = lazy(() => import("./pages/Pricing"));
-const Product = lazy(() => import("./pages/Product"));
+const Pricing = lazy(() => import("./pages/Product & Pricing/Pricing"));
+const Product = lazy(() => import("./pages/Product & Pricing/Product"));
 const PageNotFound = lazy(() => import("./pages/PageNotFound"));
 
 import AppLayout from "./pages/AppLayout/AppLayout";

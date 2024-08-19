@@ -37,7 +37,7 @@ function CityItem({ city }) {
 				<h3 className={styles.name}>{cityName}</h3>
 				<time className={styles.date}>({formatDate(date)})</time>
 				<button
-					className="btn btn-error btn-square rounded-lg hover:btn-outline transition-all duration-200"
+					className="btn btn-error btn-square btn-sm sm:btn-md rounded-lg hover:btn-outline transition-all duration-200"
 					onClick={(e) => handleDelete(e)}>
 					<svg
 						className="h-6 w-6"
