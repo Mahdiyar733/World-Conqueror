@@ -4,7 +4,7 @@ import { useParams } from "react-router";
 import styles from "./City.module.css";
 import { useEffect } from "react";
 import { useCities } from "../contexts/CitiesContext";
-import Spinner from "./Spinner";
+import Spinner, { SpinnerCities } from "./Spinner";
 import Button from "./utils/Button";
 import { useNavigate } from "react-router";
 
@@ -27,7 +27,7 @@ function City() {
 
 	const { cityName, emoji, date, notes, position } = currCity;
 
-	if (isLoading) return <Spinner />;
+	if (isLoading) return <SpinnerCities />;
 	return (
 		<div className={styles.city}>
 			<div className={styles.row}>

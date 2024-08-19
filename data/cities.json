@@ -1,16 +1,244 @@
 {
   "cities": [
     {
-      "cityName": "Useras",
+      "cityName": "Djebel Messaad",
+      "country": "Algeria",
+      "emoji": "🇩🇿",
+      "date": "2024-08-19T10:55:16.355Z",
+      "notes": "",
+      "position": {
+        "lat": "34.994003757575776",
+        "lng": "4.130859375000001"
+      },
+      "id": 1
+    },
+    {
+      "cityName": "Konigsbruck",
+      "country": "Germany",
+      "emoji": "🇩🇪",
+      "date": "2024-08-19T10:55:21.338Z",
+      "notes": "",
+      "position": {
+        "lat": "51.37178037591739",
+        "lng": "13.842773437500002"
+      },
+      "id": 2
+    },
+    {
+      "cityName": "Requena",
       "country": "Spain",
       "emoji": "🇪🇸",
-      "date": "2024-08-16T18:07:48.110Z",
-      "notes": "ww",
+      "date": "2024-08-19T10:57:10.106Z",
+      "notes": "",
       "position": {
-        "lat": "40.18411931650587",
-        "lng": "-0.07690429687500001"
+        "lat": "39.37677199661635",
+        "lng": "-1.1645507812500002"
       },
       "id": 3
+    },
+    {
+      "cityName": "Tynset",
+      "country": "Norway",
+      "emoji": "🇳🇴",
+      "date": "2024-08-19T10:59:43.775Z",
+      "notes": "",
+      "position": {
+        "lat": "62.34960927573042",
+        "lng": "10.590820312500002"
+      },
+      "id": 4
+    },
+    {
+      "cityName": "Konakovo",
+      "country": "Russian Federation (the)",
+      "emoji": "🇷🇺",
+      "date": "2024-08-19T10:59:58.907Z",
+      "notes": "",
+      "position": {
+        "lat": "56.65622649350222",
+        "lng": "36.56250000000001"
+      },
+      "id": 5
+    },
+    {
+      "cityName": "Liminka",
+      "country": "Finland",
+      "emoji": "🇫🇮",
+      "date": "2024-08-19T11:00:46.275Z",
+      "notes": "",
+      "position": {
+        "lat": "64.84893726357947",
+        "lng": "25.488281250000004"
+      },
+      "id": 6
+    },
+    {
+      "cityName": "Berezovo",
+      "country": "Russian Federation (the)",
+      "emoji": "🇷🇺",
+      "date": "2024-08-19T11:02:54.317Z",
+      "notes": "",
+      "position": {
+        "lat": "64.77412531292873",
+        "lng": "61.52343750000001"
+      },
+      "id": 7
+    },
+    {
+      "cityName": "Dudinka",
+      "country": "Russian Federation (the)",
+      "emoji": "🇷🇺",
+      "date": "2024-08-19T11:03:06.668Z",
+      "notes": "test",
+      "position": {
+        "lat": "68.65655498475738",
+        "lng": "90.52734375"
+      },
+      "id": 8
+    },
+    {
+      "cityName": "Tura",
+      "country": "Russian Federation (the)",
+      "emoji": "🇷🇺",
+      "date": "2024-08-19T11:04:34.152Z",
+      "notes": "",
+      "position": {
+        "lat": "62.186013857194226",
+        "lng": "105.99609375000001"
+      },
+      "id": 9
+    },
+    {
+      "cityName": "Olenyok",
+      "country": "Russian Federation (the)",
+      "emoji": "🇷🇺",
+      "date": "2024-08-19T11:05:12.129Z",
+      "notes": "",
+      "position": {
+        "lat": "71.19815794147074",
+        "lng": "122.0629119873047"
+      },
+      "id": 10
+    },
+    {
+      "cityName": "Tver",
+      "country": "Russian Federation (the)",
+      "emoji": "🇷🇺",
+      "date": "2024-08-19T11:07:20.988Z",
+      "notes": "",
+      "position": {
+        "lat": "56.74443993148862",
+        "lng": "36.39358520507813"
+      },
+      "id": 11
+    },
+    {
+      "cityName": "Tver",
+      "country": "Russian Federation (the)",
+      "emoji": "🇷🇺",
+      "date": "2024-08-19T11:08:15.438Z",
+      "notes": "",
+      "position": {
+        "lat": "56.86173648321411",
+        "lng": "36.25831604003907"
+      },
+      "id": 12
+    },
+    {
+      "cityName": "Tynset",
+      "country": "Norway",
+      "emoji": "🇳🇴",
+      "date": "2024-08-19T11:09:47.973Z",
+      "notes": "",
+      "position": {
+        "lat": "62.414544584178266",
+        "lng": "10.46104431152344"
+      },
+      "id": 13
+    },
+    {
+      "cityName": "Algaida",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2024-08-19T11:10:10.775Z",
+      "notes": "",
+      "position": {
+        "lat": "39.57182223734374",
+        "lng": "2.889404296875"
+      },
+      "id": 14
+    },
+    {
+      "cityName": "Manacor",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2024-08-19T11:10:28.743Z",
+      "notes": "",
+      "position": {
+        "lat": "39.592990390285024",
+        "lng": "3.1860351562500004"
+      },
+      "id": 15
+    },
+    {
+      "cityName": "’Ain Abessa",
+      "country": "Algeria",
+      "emoji": "🇩🇿",
+      "date": "2024-08-19T11:10:37.793Z",
+      "notes": "",
+      "position": {
+        "lat": "36.38591277287654",
+        "lng": "5.284423828125"
+      },
+      "id": 16
+    },
+    {
+      "cityName": "Chehaima",
+      "country": "Algeria",
+      "emoji": "🇩🇿",
+      "date": "2024-08-19T11:12:11.792Z",
+      "notes": "",
+      "position": {
+        "lat": "34.903952965590065",
+        "lng": "1.3842773437500002"
+      },
+      "id": 17
+    },
+    {
+      "cityName": "Fezna",
+      "country": "Morocco",
+      "emoji": "🇲🇦",
+      "date": "2024-08-19T11:12:17.443Z",
+      "notes": "",
+      "position": {
+        "lat": "31.615965936476076",
+        "lng": "-4.614257812500001"
+      },
+      "id": 18
+    },
+    {
+      "cityName": "Oum El Assel",
+      "country": "Algeria",
+      "emoji": "🇩🇿",
+      "date": "2024-08-19T11:12:33.193Z",
+      "notes": "",
+      "position": {
+        "lat": "27.97499795326776",
+        "lng": "-5.053710937500001"
+      },
+      "id": 19
+    },
+    {
+      "cityName": "Kocasinan",
+      "country": "Turkiye",
+      "emoji": "🇹🇷",
+      "date": "2024-08-19T11:12:44.292Z",
+      "notes": "",
+      "position": {
+        "lat": "38.95940879245423",
+        "lng": "35.50781250000001"
+      },
+      "id": 20
     }
   ]
 }

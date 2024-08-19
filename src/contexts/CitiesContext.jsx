@@ -46,6 +46,8 @@ function CitiesProvider({ children }) {
 				const res = await fetch(`${BASE_URL}/cities/${id}`, { signal });
 				if (!res.ok) throw new Error("Network response was not ok !");
 				const data = await res.json();
+				console.log(data);
+
 				setCurrCity(data);
 				setIsLoading(false);
 			} catch (err) {

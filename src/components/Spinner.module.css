@@ -55,3 +55,58 @@
 		transform: scale(1.2, 1);
 	}
 }
+
+.cssSelector {
+	background: linear-gradient(86deg, #885af9, #9a9ea1);
+	background-size: 400% 400%;
+
+	-webkit-animation: AnimationName 2s ease infinite;
+	-moz-animation: AnimationName 2s ease infinite;
+	-o-animation: AnimationName 2s ease infinite;
+	animation: AnimationName 2s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+	0% {
+		background-position: 0% 56%;
+	}
+	50% {
+		background-position: 100% 45%;
+	}
+	100% {
+		background-position: 0% 56%;
+	}
+}
+@-moz-keyframes AnimationName {
+	0% {
+		background-position: 0% 56%;
+	}
+	50% {
+		background-position: 100% 45%;
+	}
+	100% {
+		background-position: 0% 56%;
+	}
+}
+@-o-keyframes AnimationName {
+	0% {
+		background-position: 0% 56%;
+	}
+	50% {
+		background-position: 100% 45%;
+	}
+	100% {
+		background-position: 0% 56%;
+	}
+}
+@keyframes AnimationName {
+	0% {
+		background-position: 0% 56%;
+	}
+	50% {
+		background-position: 100% 45%;
+	}
+	100% {
+		background-position: 0% 56%;
+	}
+}

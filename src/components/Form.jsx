@@ -5,7 +5,7 @@ import Button from "./utils/Button";
 import { AppContext } from "../pages/AppLayout/AppLayout";
 import { useCities } from "../contexts/CitiesContext";
 import { useSearchParams } from "react-router-dom";
-import Spinner from "./Spinner";
+import { SpinnerCities } from "./Spinner";
 
 export function convertToEmoji(countryCode) {
 	const codePoints = countryCode
@@ -19,7 +19,7 @@ const BASE_URL = "https://api.bigdatacloud.net/data/reverse-geocode-client";
 function Form() {
 	const { setIsAnimating, setIsOpenToast, isOpenToast } =
 		useContext(AppContext);
-	const { currCity, postCity } = useCities();
+	const { currCity, postCity, setCurrCity } = useCities();
 	const [cityName, setCityName] = useState("");
 	const [country, setCountry] = useState("");
 	const [notes, setNotes] = useState("");
@@ -33,11 +33,14 @@ function Form() {
 
 	const navigate = useNavigate();
 
-	function handleAdd(e) {
+	async function handleAdd(e) {
 		e.preventDefault();
 		setIsAnimating(true);
 		setIsOpenToast(true);
 		handleSubmit();
+		setTimeout(() => {
+			setIsLoading(false);
+		}, 1000);
 	}
 
 	function handleBack(e) {
@@ -61,8 +64,10 @@ function Form() {
 				lng: mapLng,
 			},
 		};
+		setIsLoading(true);
 		await postCity(newCity);
-		navigate("/app/cities");
+		navigate(`/app`);
+		setCurrCity({});
 	}
 
 	useEffect(() => {
@@ -70,12 +75,11 @@ function Form() {
 
 		async function fetchCityInfo() {
 			try {
-				setIsLoading;
+				setIsLoading(true);
 				const res = await fetch(
 					`${BASE_URL}?latitude=${mapLat}&longitude=${mapLng}`,
 				);
 				const data = await res.json();
-				console.log(data);
 				if (data.countryName == "")
 					throw new Error("Please pick somewhere else.");
 				else {
@@ -94,7 +98,7 @@ function Form() {
 		fetchCityInfo();
 	}, [mapLat, mapLng]);
 
-	if (isLoading) return <Spinner />;
+	if (isLoading) return <SpinnerCities />;
 	if (!mapLat && !mapLng) return <h1>click on the map first</h1>;
 	if (err) return <p>{err}</p>;
 

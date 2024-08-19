@@ -17,6 +17,8 @@ function CityItem({ city }) {
 	const [isCurr, setIsCurr] = useState(false);
 	useEffect(() => {
 		setIsCurr(id === currCity.id);
+		console.log("id : ", id);
+		console.log("currid : ", currCity.id);
 	}, [id, currCity.id]);
 
 	function handleDelete(e) {
