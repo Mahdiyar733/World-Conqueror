@@ -9,7 +9,7 @@ import { AppContext } from "../pages/AppLayout/AppLayout";
 function Sidebar() {
 	const { err } = useContext(AppContext);
 	return (
-		<div className={styles.sidebar}>
+		<div className={`${styles.sidebar} bg-neutral`}>
 			<Logo />
 			<AppNav />
 			{err ? (

@@ -2,10 +2,10 @@
 import { createContext, useContext, useReducer } from "react";
 
 const FAKE_USER = {
-	name: "Mahdiyar",
+	name: "Jaden",
 	email: "rez@example.com",
 	password: "1234",
-	avatar: "https://i.pravatar.cc/100?u=zz",
+	avatar: "https://i.pravatar.cc/100?u=bb",
 };
 
 const AuthContext = createContext();
@@ -17,6 +17,8 @@ const initState = {
 
 function reducer(state, action) {
 	switch (action.type) {
+		case "user":
+			return { ...state };
 		case "login":
 			return { ...state, user: action.payload, isAuth: true };
 		case "logout":
@@ -37,6 +39,24 @@ function reducer(state, action) {
 function AuthProvider({ children }) {
 	const [{ user, isAuth, error }, dispatch] = useReducer(reducer, initState);
 
+	// async function getUser(email, password) {
+	// 	try {
+	// 		const res = await fetch("https://randomuser.me/api/");
+	// 		if (!res.ok) throw new Error("Network response was not ok !");
+	// 		const data = await res.json();
+	// 		const info = await data.results[0];
+	// 		const name = await info.name.first;
+	// 		const avatar = await info.picture.medium;
+	// 		const user = { name, email, password, avatar };
+	// 		dispatch({ type: "login", payload: user });
+	// 	} catch (err) {
+	// 		dispatch({
+	// 			type: "err",
+	// 			payload: { message: err.message, target: "user" },
+	// 		});
+	// 	}
+	// }
+
 	function login(email, pass) {
 		if (!email.trim()) {
 			dispatch({
@@ -54,6 +74,7 @@ function AuthProvider({ children }) {
 		}
 		if (email === FAKE_USER.email && pass === FAKE_USER.password) {
 			dispatch({ type: "login", payload: FAKE_USER });
+			// getUser(email, pass);
 		} else {
 			dispatch({
 				type: "err",
