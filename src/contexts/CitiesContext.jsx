@@ -2,8 +2,7 @@
 import { createContext, useState, useEffect, useContext } from "react";
 
 const BASE_URL = "http://localhost:8000";
-const masterKey =
-	"$2a$10$U5RU5VAlxgI5yJMXR6lQ0.oDO1int9M40DUM5QC3Kr.KPiVw6afhC";
+
 const CitiesContext = createContext("");
 
 function CitiesProvider({ children }) {
@@ -18,20 +17,11 @@ function CitiesProvider({ children }) {
 		async function fetchData() {
 			try {
 				setIsLoading(true);
-				// const res = await fetch(`${BASE_URL}/cities`, { signal });
-				const res = await fetch(
-					`https://api.jsonbin.io/v3/b/66c49cefe41b4d34e422d5b7/latest`,
-					{
-						method: "GET", // or 'POST', depending on your needs
-						headers: {
-							"Content-Type": "application/json",
-							"X-Master-Key": { masterKey }, // Replace with your actual master key if needed
-						},
-					},
-					{ signal },
-				);
+				const res = await fetch(`${BASE_URL}/cities`, { signal });
 				if (!res.ok) throw new Error("Network response was not ok !");
 				const data = await res.json();
+				console.log(data);
+
 				setCities(data);
 				setIsLoading(false);
 			} catch (err) {
