@@ -1,5 +1,6 @@
 // import ArrowdownSvg from "../../svg/ArrowdownSvg";
 import styles from "./Sec.module.css";
+import packedImage from "./packed.jpg";
 
 export default function Sec2() {
 	return (
@@ -33,7 +34,7 @@ export default function Sec2() {
 						<figure className="flex-[2]">
 							<img
 								className=" object-cover h-full w-full"
-								src="/src/pages/Homepage/packed.jpg"
+								src={packedImage}
 								alt="packed"
 							/>
 						</figure>
