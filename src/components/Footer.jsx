@@ -71,14 +71,18 @@ function Footer() {
 							<div
 								className="tooltip tooltip-bottom"
 								data-tip="Mail">
-								<a className=" cursor-pointer hover:-translate-y-1 transition-all duration-300">
+								<a
+									href="mailto:imahrez733@example.com"
+									className=" cursor-pointer hover:-translate-y-1 transition-all duration-300">
 									<EmailSvg />
 								</a>
 							</div>
 							<div
 								className="tooltip tooltip-bottom"
 								data-tip="Github">
-								<a className=" cursor-pointer hover:-translate-y-1 transition-all duration-300">
+								<a
+									className=" cursor-pointer hover:-translate-y-1 transition-all duration-300"
+									href="https://github.com/Mahdiyar733">
 									<GithubSvg />
 								</a>
 							</div>
