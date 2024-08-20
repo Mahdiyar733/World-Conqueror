@@ -53,7 +53,7 @@ function Footer() {
 				</div>
 				<div className="grid grid-cols-1 grid-rows-2 sm:grid-cols-2 sm:grid-rows-1 lg:grid-cols-1 lg:grid-rows-2 lg:gap-4 justify-center items-center w-full p-7 mb-7">
 					<div className="flex flex-row-reverse gap-3 items-center justify-center">
-						<h1 className="text-5xl font-semibold">GlobeTrotter</h1>
+						<h1 className="text-5xl font-semibold">World-Conquerer</h1>
 						<LogoSvg />
 					</div>
 					<div className="flex flex-col items-center justify-end gap-5 lg:flex-row lg:justify-center">
