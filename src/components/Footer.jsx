@@ -63,6 +63,7 @@ function Footer() {
 								className="tooltip tooltip-bottom"
 								data-tip="Telegram">
 								<a
+									target="_blank"
 									className=" cursor-pointer hover:-translate-y-1 transition-all duration-300"
 									href="https://telegram.me/Mahdiyar733">
 									<TelegramSvg />
@@ -72,6 +73,7 @@ function Footer() {
 								className="tooltip tooltip-bottom"
 								data-tip="Mail">
 								<a
+									target="_blank"
 									href="mailto:imahrez733@example.com"
 									className=" cursor-pointer hover:-translate-y-1 transition-all duration-300">
 									<EmailSvg />
@@ -81,6 +83,7 @@ function Footer() {
 								className="tooltip tooltip-bottom"
 								data-tip="Github">
 								<a
+									target="_blank"
 									className=" cursor-pointer hover:-translate-y-1 transition-all duration-300"
 									href="https://github.com/Mahdiyar733">
 									<GithubSvg />
