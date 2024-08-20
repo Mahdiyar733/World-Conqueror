@@ -3,6 +3,7 @@ import PageNav from "../../components/PageNav";
 import styles from "./ProductPricing.module.css";
 import { DropdownContext } from "../../components/DropdownBtn";
 import DropdownMenu from "../../components/DropdownMenu";
+import productImage from "./img-1.jpg";
 export default function Product() {
 	const { isOpen } = useContext(DropdownContext);
 
@@ -13,7 +14,7 @@ export default function Product() {
 			{!isOpen ? (
 				<section className="h-full flex flex-col w-full md:flex-row items-center p-9 py-16 gap-5 md:px-1 lg:gap-16 md:gap-9">
 					<img
-						src="img-1.jpg"
+						src={productImage}
 						className="flex-[2] object-cover sm:max-h-auto max-h-[300px] rounded-lg sm:flex-1 max-w-[380px] animate-fade"
 						alt="person with dog overlooking mountain with sunset"
 					/>

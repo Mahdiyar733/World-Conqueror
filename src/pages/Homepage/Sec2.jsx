@@ -1,6 +1,8 @@
 // import ArrowdownSvg from "../../svg/ArrowdownSvg";
 import styles from "./Sec.module.css";
 import packedImage from "./packed.jpg";
+import travelImage from "./travel.jpg";
+import ticketImage from "./ticket.jpg";
 
 export default function Sec2() {
 	return (
@@ -16,7 +18,7 @@ export default function Sec2() {
 						<figure className="flex-[2]">
 							<img
 								className="object-cover h-full w-full"
-								src="/travel.jpg"
+								src={travelImage}
 								alt="travel"
 							/>
 						</figure>
@@ -25,15 +27,19 @@ export default function Sec2() {
 							<p className="text-2xl">
 								information about where you want to trip !
 							</p>
-							<button className="btn btn-wide btn-lg btn-primary hover:bg-[#ECECEC] hover:text-primary">
-								Learn more
-							</button>
+							<a
+								href="https://www.infoplease.com/countries"
+								target="_blank">
+								<button className="btn btn-wide btn-lg btn-primary hover:bg-[#ECECEC] hover:text-primary">
+									Learn more
+								</button>
+							</a>
 						</div>
 					</div>
 					<div className="card backdrop-blur-lg backdrop-brightness-150 flex-1 h-full max-w-[383px]">
 						<figure className="flex-[2]">
 							<img
-								className=" object-cover h-full w-full"
+								className="object-cover h-full w-full"
 								src={packedImage}
 								alt="packed"
 							/>
@@ -58,7 +64,7 @@ export default function Sec2() {
 						<figure className="flex-[2]">
 							<img
 								className=" object-cover h-full w-full"
-								src="./src/pages/Homepage/ticket.jpg"
+								src={ticketImage}
 								alt="ticket"
 							/>
 						</figure>
@@ -67,9 +73,13 @@ export default function Sec2() {
 							<p className="text-2xl">
 								From this website you can book your ticket !
 							</p>
-							<button className="btn btn-wide btn-lg btn-primary hover:bg-[#ECECEC] hover:text-primary">
-								Book ticket
-							</button>
+							<a
+								href="https://www.kayak.com/"
+								target="_blank">
+								<button className="btn btn-wide btn-lg btn-primary hover:bg-[#ECECEC] hover:text-primary">
+									Book ticket
+								</button>
+							</a>
 						</div>
 					</div>
 				</div>
