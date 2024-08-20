@@ -27,6 +27,19 @@
 	}
 }
 
+@media (max-height: 670px) {
+	.pricing,
+	.product {
+		height: auto;
+	}
+}
+@media (min-height: 670px) {
+	.pricing,
+	.product {
+		height: 100dvh;
+	}
+}
+
 @media (min-width: 1024px) {
 	.product,
 	.pricing {
