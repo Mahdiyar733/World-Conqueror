@@ -64,7 +64,7 @@ function Footer() {
 								data-tip="Telegram">
 								<a
 									className=" cursor-pointer hover:-translate-y-1 transition-all duration-300"
-									href="">
+									href="https://telegram.me/Mahdiyar733">
 									<TelegramSvg />
 								</a>
 							</div>
