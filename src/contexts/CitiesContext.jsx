@@ -20,8 +20,6 @@ function CitiesProvider({ children }) {
 				const res = await fetch(`${BASE_URL}/cities`, { signal });
 				if (!res.ok) throw new Error("Network response was not ok !");
 				const data = await res.json();
-				console.log(data);
-
 				setCities(data);
 				setIsLoading(false);
 			} catch (err) {
