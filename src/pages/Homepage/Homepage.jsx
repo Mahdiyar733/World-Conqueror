@@ -21,7 +21,7 @@ export default function Homepage() {
 							<h1>
 								You travel the world.
 								<br />
-								World-Conquerer keeps track of your adventures.
+								World-Conqueror keeps track of your adventures.
 							</h1>
 							<h2>
 								A world map that tracks your footsteps into every city you can

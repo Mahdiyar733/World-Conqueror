@@ -7,7 +7,7 @@ function Logo() {
 			className="flex flex-row items-center justify-center gap-7">
 			<LogoSvg />
 			<label className="font-semibold text-4xl sm:text-7xl md:text-5xl cursor-pointer">
-				GlobeTrotter
+				World-Conqueror
 			</label>
 		</Link>
 	);

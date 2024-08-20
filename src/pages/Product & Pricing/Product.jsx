@@ -20,16 +20,16 @@ export default function Product() {
 					/>
 					<div className="flex-1 flex flex-col justify-center backdrop-saturate-200 p-2 md:p-0 animate-fade-right">
 						<h2 className="text-4xl font-semibold mb-2 sm:text-5xl lg:text-7xl flex flex-row items-center text-nowrap">
-							About World-Conquerer 🌍
+							About World-Conqueror 🌍
 						</h2>
 						<p className="text-base text-justify sm:text-2xl sm:text-left lg:text-3xl font-normal text-wrap">
-							Embark on your adventures with WorldConquerer, the innovative app
+							Embark on your adventures with WorldConqueror, the innovative app
 							designed to enhance your travel experience like never before.
-							WorldConquerer allows you to effortlessly track your journeys and
+							WorldConqueror allows you to effortlessly track your journeys and
 							visualize your travels on an interactive map. With its
 							user-friendly interface, you can log your trips, mark significant
 							locations, and revisit cherished memories—all in one place. every
-							journey becomes a story waiting to be told. Start GlobeTrotter
+							journey becomes a story waiting to be told. Start Worl-Conqueror
 							today and take the first step towards transforming the way you
 							explore our beautiful planet!
 						</p>
