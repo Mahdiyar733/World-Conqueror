@@ -30,10 +30,13 @@ export default function Login() {
 			{!isOpen ? (
 				<div
 					className={`h-full w-full md:p-20 mt-7 animate-fade-up backdrop-brightness-150 backdrop-saturate-150 rounded-lg p-9`}>
-					<div className="h-full w-full rounded-lg flex flex-col  bg-cover bg-center">
+					<div className="h-full w-full rounded-lg flex flex-col bg-cover bg-center">
 						<form
-							className="h-full backdrop-hue-rotate-180 rounded-lg backdrop-brightness-75  flex flex-col items-center justify-center gap-3 w-full"
+							className="h-full rounded-lg backdrop-brightness-75  flex flex-col items-center justify-center gap-3 w-full"
 							onSubmit={(e) => handleSub(e)}>
+							<h2 className="text-5xl font-bold tracking-tight mb-2 w-4/5 bg-neutral rounded-lg overflow-hidden bg-opacity-70 text-center py-5">
+								Login form
+							</h2>
 							<label
 								className={`input input-lg flex items-center gap-2 bg-neutral w-4/5 ${
 									error.target === "email" && "input-error"
