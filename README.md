@@ -17,6 +17,7 @@ $ npm run dev
 
 # Screenshots of app
 
+<img width="1197" alt="Screenshot 1403-06-22 at 13 01 59" src="https://github.com/user-attachments/assets/6e2f68d5-57e7-43d7-9772-6728874a559e">
 <img width="1470" alt="Screenshot 1403-05-30 at 18 09 13" src="https://github.com/user-attachments/assets/de861a4d-9615-41bc-8810-0386c580d60a">
 <img width="1470" alt="Screenshot 1403-05-30 at 18 10 05" src="https://github.com/user-attachments/assets/3f3bbd24-68a4-4020-8257-726daa4cb428">
 <img width="1470" alt="Screenshot 1403-05-30 at 18 10 17" src="https://github.com/user-attachments/assets/dda693b2-56a6-4aab-9959-100eaa03968f">
